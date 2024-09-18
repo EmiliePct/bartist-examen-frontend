@@ -2,7 +2,7 @@
 // l'inscription d'un nouvel utilisateur
 export const signUpArtist = async (email, password) => {
   try {
-    const response = await fetch(`http://localhost:3000/artists/signUp`, {
+    const response = await fetch(`https://bartist-examen-backend.vercel.app/artists/signUp`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -20,7 +20,7 @@ export const signUpArtist = async (email, password) => {
 // la connnexion d'un utilisateur
 export const signInArtist = async (email, password) => {
   try {
-    const response = await fetch(`http://localhost:3000/artists/signIn`, {
+    const response = await fetch(`https://bartist-examen-backend.vercel.app/artists/signIn`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -52,7 +52,7 @@ export const updateArtist = async (
 ) => {
   try {
     const response = await fetch(
-      `http://localhost:3000/artists/createProfile/${token}`,
+      `https://bartist-examen-backend.vercel.app/artists/createProfile/${token}`,
       {
         method: "POST",
         headers: {
@@ -83,7 +83,7 @@ export const updateArtist = async (
 // Fonction de liaison vers le backend et de controle des données pour récupérer les données sur un artiste.
 export const getArtist = async (token) => {
   try {
-    const response = await fetch(`http://localhost:3000/artists/token/${token}`, {
+    const response = await fetch(`https://bartist-examen-backend.vercel.app/artists/token/${token}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -98,7 +98,7 @@ export const getArtist = async (token) => {
 
 export const getArtists = async () => {
   try {
-    const response = await fetch(`http://localhost:3000/artists`, {
+    const response = await fetch(`https://bartist-examen-backend.vercel.app/artists`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -117,7 +117,7 @@ export const getArtists = async () => {
 
 export const getArtistById = async (id) => {
   try {
-    const response = await fetch(`http://localhost:3000/artists/id/${id}`, {
+    const response = await fetch(`https://bartist-examen-backend.vercel.app/artists/id/${id}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

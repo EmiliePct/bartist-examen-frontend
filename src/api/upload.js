@@ -11,7 +11,7 @@ export const uploadProfilePicture = async (event, token, isVenue) => {
      formData.append('token', token);
      formData.append('isVenue', isVenue);
      console.log("formData", formData)
-    const response = await fetch('http://localhost:3000/medias/uploadProfilePicture', {
+    const response = await fetch('https://bartist-examen-backend.vercel.app/medias/uploadProfilePicture', {
       method: 'POST',
       body:
         formData,
