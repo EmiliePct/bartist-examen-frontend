@@ -33,7 +33,7 @@ export const signInVenue = async (email, password) => {
     }
 }
 
-//FETCH create profil
+//FETCH create profile
 export const updateProfileVenue = async ( 
     token, name, address, type, description, picture) => {
         

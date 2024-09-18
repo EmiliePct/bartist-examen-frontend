@@ -76,11 +76,11 @@ const CreateBookingProposal = ({isOpen, onClose, artist, event}) => {
       if(user.isVenue){
          await createBooking(user.token, user.isVenue, artist._id , venue, eventBooking, hour_start, Number(duration), Number(rate), status, description)
          setLoading(false)
-         setTimeout(4000)
          router.push("/Propositions")
-      }else{
-        const data = await createBooking(user.token, user.isVenue, artistBook._id , event.venue, event._id, hour_start, Number(duration), Number(rate), status, description)
-        console.log(data)
+      } else {
+        await createBooking(user.token, user.isVenue, artistBook._id , event.venue, event._id, hour_start, Number(duration), Number(rate), status, description)
+        setLoading(false)
+        router.push("/Propositions")
       }
     }
 
@@ -159,6 +159,7 @@ const CreateBookingProposal = ({isOpen, onClose, artist, event}) => {
               placeholder="Tarif que vous proposez pour la prestation (€)"
               onChange={(e) => setRate(e.target.value)}
               value={rate}
+              min={'5'}
               step={5}
             />
           </div>

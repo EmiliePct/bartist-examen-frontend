@@ -43,7 +43,7 @@ function VenueForm() {
   //upload img
   const handleFileUpload = async (event) => {
     console.log("event", event);
-    const data = await uploadProfilePicture(event); // Récupère le fichier sélectionné par l'utilisateur
+    const data = await uploadProfilePicture(event, user.token, user.isVenue); // Récupère le fichier sélectionné par l'utilisateur
     console.log("data", data);
     setPicture(data.imageUrl); // recupere l'url du fichier sur cloudinary
   };

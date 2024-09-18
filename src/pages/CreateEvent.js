@@ -40,7 +40,7 @@ export default function CreateEvent() {
     );
   };
 
-  const handleSubmit = (status) => {
+  const handleSubmit = () => {
     console.log(picture)
     try {
       setLoading(true)
@@ -52,16 +52,11 @@ export default function CreateEvent() {
         hour_start,
         picture,
         genres,
-        status,
         facebook,
         instagram
       );
     } catch (e) {
-      setError(
-        `Failed to ${status === "Brouillon" ? "save" : "publish"} the event: ${
-          e.message
-        }`
-      );
+      setError(e.message);
     } finally {
       setLoading(false)
       router.push("/Events");
@@ -184,14 +179,7 @@ export default function CreateEvent() {
             <button
               disabled={loading ? true : false}
               type="button"
-              onClick={() => handleSubmit("Brouillon")}
-            >
-              {loading ? "Chargement" : "Enregister le brouillon"}
-            </button>
-            <button
-              disabled={loading ? true : false}
-              type="button"
-              onClick={() => handleSubmit("Publié")}
+              onClick={() => handleSubmit()}
             >
               {loading ? "Chargement" : "Publier"}
             </button>

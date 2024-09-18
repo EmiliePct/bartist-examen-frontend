@@ -15,16 +15,16 @@
 
 .card{
     display: flex;
-    height: 100%;
     flex-direction: column;
-    min-height: 550px;
-    max-height: 800px;
+
+    height: 800px;
     width: 400px;
     align-items: center;
     justify-content: space-between;
     padding: 20px;
     background-color: #0A0A0A;
     border-radius: 50px;
+    overflow-y: auto;
 }
 
 .card > h2{

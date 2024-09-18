@@ -63,7 +63,7 @@ export default function ArtistForm() {
 
   const handleFileUpload = async (event) => {
     setLoading(true);
-    const data = await uploadProfilePicture(event); // Récupère le fichier sélectionné par l'utilisateur
+    const data = await uploadProfilePicture(event, user.token, user.isVenue); // Récupère le fichier sélectionné par l'utilisateur
     setPicture(data.imageUrl); // recupere l'url du fichier sur cloudinary
     setLoading(false);
   };

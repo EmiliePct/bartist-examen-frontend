@@ -8,7 +8,6 @@ export const createEvent = async (
   hour_start,
   picture,
   genres,
-  status,
   facebook,
   instagram
 ) => {
@@ -26,7 +25,6 @@ export const createEvent = async (
         hour_start: moment(hour_start._d).format("LT"),
         picture,
         genres,
-        status,
         socials: {
           facebook,
           instagram
@@ -64,41 +62,6 @@ export const getEvents = async () => {
     console.error("Error fetching events: ", error.message);
   }
 };
-
-  export const deleteEvents = async (_id) => {
-    try{
-      const response = await fetch(`http://localhost:3000/events/deleteEvent`, {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      _id: _id,
-    }),
-  });
-  const data = await response.json()
-      return data;
-    }catch(error){
-      console.error("Error fetching events: ", error.message)
-    }
-  }
-
-
-  export const updateEventStatus = async (status, id) => {
-    try{
-      const response = await fetch('http://localhost:3000/events/updateEventStatus', {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ _id: id, status: status}),
-      });
-      const data = await response.json()
-      return data;
-    }catch(error){
-      console.error("Error fetching events: ", error.message)
-    }
-  }
 
   export const getEventById = async (id) => {
     try{

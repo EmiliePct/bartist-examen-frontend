@@ -16,11 +16,13 @@
 .sideMenu {
     display: flex;
     flex-direction: column;
-    min-width: 250px;
+    /* min-width: 250px; */
+    min-width: 20vw;
+    max-width: 250px;
     background-color: #06013f0d;
     border: 2px rgba(47, 47, 47, 0.362) solid;
     justify-content: space-between;
-    height: 90%;
+    height: 100%;
     border-radius: 0px 0px 30px;
     padding: 50px 0;
 }
